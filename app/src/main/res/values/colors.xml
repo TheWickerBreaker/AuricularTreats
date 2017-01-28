@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#040404</color>
+    <color name="optionPageButtons">#e9e6e6</color>
+    <color name="optionPageButtonsOutline">#FF969393</color>
+    <color name="offBlackForText">#040404</color>
+    <color name="jukeboxGray">#c7cad3</color>
+    <color name="linkBlue">#1a2cb4</color>
+    <color name="radioBackGroundRed">#380606</color>
+    <color name="radioContainerTan">#d3af8e</color>
+    <color name="radioLogoRed">#7a0e0e</color>
+    <color name="radioRedishBlack">#201b1b</color>
+    <color name="radioDialGreen">#06f611</color>
+    <color name="homePagePrimary">#009688</color>
+    <color name="homePageDark">#004D40</color>
+    <color name="homePageLight">#E0F2F1</color>
+    <color name="podcastWhite">#ffffff</color>
+    <color name="podcastPrimary">#666666</color>
+    <color name="podcastLight">#999999</color>
+    <color name="podcastDark">#333333</color>
+    <color name="darkGreen">#1B5E20</color>
+</resources>

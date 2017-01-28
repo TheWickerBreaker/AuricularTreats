@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jukeboxGray"
+    tools:context="com.thewickerbreaker.auriculartreats.Jukebox">
+
+    <ScrollView
+        android:id="@+id/main_jukebox_scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/inner_scroll_jukebox_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/jukebox_logo"
+                style="@style/landscapeLogoStyle"
+                android:background="@drawable/black_with_light_border_rounded_corners"
+                android:contentDescription="@string/jukebox_logo"
+                android:src="@drawable/vert_logo_white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/now_playing_container_jbp"
+                    style="@style/jukeboxContentContainerLS"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/now_playing_title"
+                        style="@style/jukeboxContainerHeader"
+                        android:text="@string/now_playing_header" />
+
+                    <View
+                        android:id="@+id/now_playing_divider_line"
+                        style="@style/jukeboxHorizontalLine" />
+
+                    <LinearLayout
+                        android:id="@+id/now_playing_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/now_playing_album_cover"
+                            style="@style/nowPlayingAlbumArtStyle"
+                            android:contentDescription="@string/now_playing_album_art"
+                            android:src="@drawable/bad_astronaut_vs_armchair_martian" />
+
+                        <LinearLayout
+                            android:id="@+id/now_playing_info_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/now_playing_song_header"
+                                style="@style/jukeboxHeader"
+                                android:text="@string/song" />
+
+                            <TextView
+                                android:id="@+id/now_playing_song_title_info"
+                                style="@style/jukeboxContent"
+                                android:text="@string/not_a_dull_moment" />
+
+                            <TextView
+                                android:id="@+id/now_playing_artist_header"
+                                style="@style/jukeboxHeader"
+                                android:text="@string/artist" />
+
+                            <TextView
+                                android:id="@+id/now_playing_artist_info"
+                                style="@style/jukeboxContent"
+                                android:text="@string/armchair_martian" />
+
+                            <TextView
+                                android:id="@+id/now_playing_album_header"
+                                style="@style/jukeboxHeader"
+                                android:text="@string/album" />
+
+                            <TextView
+                                android:id="@+id/now_playing_album_info"
+                                style="@style/jukeboxContent"
+                                android:text="@string/war_of_the_worlds" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/now_playing_about_button"
+                        style="@style/black_question_mark"
+                        android:text="@string/question_mark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/selected_album_container_jpd"
+                    style="@style/jukeboxContentContainerLS"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/album_content_header_plp"
+                        style="@style/jukeboxContainerHeader"
+                        android:text="@string/selected_album_s_artist" />
+
+                    <View
+                        android:id="@+id/add_music_divider_line_5"
+                        style="@style/jukeboxHorizontalLine" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/sample_album"
+                                style="@style/selectedAlbumArt"
+                                android:contentDescription="@string/sample_image_for_selected_music"
+                                android:src="@drawable/album_sample_one" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/jukebox_back_button"
+                                    style="@style/jukeboxBackStyle"
+                                    android:text="@string/back" />
+
+                                <Button
+                                    android:id="@+id/slected_music_about_button"
+                                    style="@style/black_question_mark"
+                                    android:layout_width="48dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginBottom="16dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:gravity="bottom"
+                                    android:text="@string/question_mark" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/selected_album_one"
+                                style="@style/selectedAlbumTitle"
+                                android:layout_marginTop="16dp"
+                                android:text="@string/selected_album" />
+
+                            <View
+                                android:id="@+id/add_music_divider_line_6"
+                                style="@style/jukeboxHorizontalLine"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginRight="16dp" />
+
+                            <TextView
+                                android:id="@+id/song_one"
+                                style="@style/selectedSongsLS"
+                                android:text="@string/_1_song_one" />
+
+                            <TextView
+                                android:id="@+id/song_two"
+                                style="@style/selectedSongsLS"
+                                android:text="@string/_2_song_two" />
+
+                            <TextView
+                                android:id="@+id/song_three"
+                                style="@style/selectedSongsLS"
+                                android:text="@string/_3_song_three" />
+
+                            <TextView
+                                android:id="@+id/song_four"
+                                style="@style/selectedSongsLS"
+                                android:text="@string/_4_song_four" />
+
+                            <TextView
+                                android:id="@+id/song_five"
+                                style="@style/selectedSongsLS"
+                                android:text="@string/_5_song_five" />
+
+                            <TextView
+                                android:id="@+id/song_six"
+                                style="@style/selectedSongsLS"
+                                android:text="@string/_6_song_six" />
+
+                            <TextView
+                                android:id="@+id/song_seven"
+                                style="@style/selectedSongsLS"
+                                android:text="@string/_7_song_seven" />
+
+                            <TextView
+                                android:id="@+id/song_eight"
+                                style="@style/selectedSongsLS"
+                                android:text="@string/_8_song_eight" />
+
+                            <TextView
+                                android:id="@+id/song_nine"
+                                style="@style/selectedSongsLS"
+                                android:text="@string/_9_song_nine" />
+
+                            <TextView
+                                android:id="@+id/song_ten"
+                                style="@style/selectedSongsLS"
+                                android:layout_marginBottom="16dp"
+                                android:text="@string/_10_song_ten" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/add_music_container_jpd"
+                    style="@style/jukeboxContentContainerLS"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/add_music_header_plp"
+                        style="@style/jukeboxContainerHeader"
+                        android:text="@string/add_music_header" />
+
+                    <View
+                        android:id="@+id/add_music_divider_line_2"
+                        style="@style/jukeboxHorizontalLine" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/top_left_edge_prev"
+                                    style="@style/prevNextStyle"
+                                    android:text="@string/previous_arrows" />
+
+                                <View
+                                    android:id="@+id/add_music_arrows_left_divider_line_3"
+                                    style="@style/jukeboxVerticalLine" />
+
+                                <TextView
+                                    android:id="@+id/top_left_edge_next"
+                                    style="@style/prevNextStyle"
+                                    android:text="@string/next_arrow_buttons" />
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/add_music_divider_line_1"
+                                style="@style/jukeboxHorizontalLine" />
+
+                            <LinearLayout
+                                android:id="@+id/topRightEdgeContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/artist_1"
+                                    style="@style/addMusicTopLabel"
+                                    android:text="@string/armchair_martian" />
+
+                                <ImageView
+                                    android:id="@+id/album_art_1"
+                                    style="@style/addMusicAlbumArt"
+                                    android:contentDescription="@string/album_art_1"
+                                    android:src="@drawable/bad_astronaut_vs_armchair_martian_small" />
+
+                                <TextView
+                                    android:id="@+id/album_1"
+                                    style="@style/addMusicBottomLabel"
+                                    android:text="@string/war_of_the_worlds" />
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/add_music_left_divider_line"
+                                style="@style/jukeboxHorizontalLine" />
+
+                            <LinearLayout
+                                android:id="@+id/bottomLeftEdgeContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/artist_2"
+                                    style="@style/addMusicTopLabel"
+                                    android:text="@string/grenadine" />
+
+                                <ImageView
+                                    android:id="@+id/album_art_2"
+                                    style="@style/addMusicAlbumArt"
+                                    android:contentDescription="@string/album_art_2"
+                                    android:src="@drawable/nopalitos" />
+
+                                <TextView
+                                    android:id="@+id/album_2"
+                                    style="@style/addMusicBottomLabel"
+                                    android:text="@string/nopalitos" />
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/add_music_next_right_divider_line"
+                                style="@style/jukeboxHorizontalLine" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/bottom_left_edge_prev"
+                                    style="@style/prevNextStyle"
+                                    android:text="@string/previous_arrows" />
+
+                                <View
+                                    android:id="@+id/add_music_arrows_left_divider_line"
+                                    style="@style/jukeboxVerticalLine" />
+
+                                <TextView
+                                    android:id="@+id/bottom_left_edge_next"
+                                    style="@style/prevNextStyle"
+                                    android:text="@string/next_arrow_buttons" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/add_music_center_divider_line"
+                            style="@style/jukeboxVerticalLine" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/top_right_edge_prev"
+                                    style="@style/prevNextStyle"
+                                    android:text="@string/previous_arrows" />
+
+                                <View
+                                    android:id="@+id/add_music_arrows_left_divider_line_4"
+                                    style="@style/jukeboxVerticalLine" />
+
+                                <TextView
+                                    android:id="@+id/top_right_edge_next"
+                                    style="@style/prevNextStyle"
+                                    android:text="@string/next_arrow_buttons" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/add_music_divider_line"
+                                style="@style/jukeboxHorizontalLine" />
+
+                            <LinearLayout
+                                android:id="@+id/topLeftEdgeContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/artist_3"
+                                    style="@style/addMusicTopLabel"
+                                    android:text="@string/das_efx" />
+
+                                <ImageView
+                                    android:id="@+id/album_art_3"
+                                    style="@style/addMusicAlbumArt"
+                                    android:contentDescription="@string/album_art_3"
+                                    android:src="@drawable/dasefx" />
+
+                                <TextView
+                                    android:id="@+id/album_3"
+                                    style="@style/addMusicBottomLabel"
+                                    android:text="@string/dead_serious" />
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/add_music_right_divider_line"
+                                style="@style/jukeboxHorizontalLine" />
+
+                            <LinearLayout
+                                android:id="@+id/bottomRightEdgeContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/artist_4"
+                                    style="@style/addMusicTopLabel"
+                                    android:text="@string/even_in_blackouts" />
+
+                                <ImageView
+                                    android:id="@+id/album_art_4"
+                                    style="@style/addMusicAlbumArt"
+                                    android:contentDescription="@string/album_art_4"
+                                    android:src="@drawable/even_in_blackouts" />
+
+                                <TextView
+                                    android:id="@+id/album_4"
+                                    style="@style/addMusicBottomLabel"
+                                    android:text="@string/foreshadows_on_the_wall"
+                                    tools:ignore="TooManyViews" />
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/add_music_next_left_divider_line"
+                                style="@style/jukeboxHorizontalLine" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:ignore="TooManyViews">
+
+                                <TextView
+                                    android:id="@+id/bottom_right_edge_prev"
+                                    style="@style/prevNextStyle"
+                                    android:text="@string/previous_arrows" />
+
+                                <View
+                                    android:id="@+id/add_music_arrows_right_divider_line"
+                                    style="@style/jukeboxVerticalLine" />
+
+                                <TextView
+                                    android:id="@+id/bottom_right_edge_next"
+                                    style="@style/prevNextStyle"
+                                    android:text="@string/next_arrow_buttons" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/add_music_search_divider_line"
+                        style="@style/jukeboxHorizontalLine" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/search_text_field"
+                            style="@style/searchStyle"
+                            android:hint="@string/search_field_hint" />
+
+                        <View
+                            android:id="@+id/add_music_search_button_divider_line"
+                            style="@style/jukeboxVerticalLine" />
+
+                        <TextView
+                            android:id="@+id/go_text_button"
+                            style="@style/searchGoButton"
+                            android:text="@string/go_button_text" />
+
+                        <Button
+                            android:id="@+id/add_music_about_button"
+                            style="@style/black_question_mark"
+                            android:layout_height="match_parent"
+                            android:text="@string/question_mark" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/playlist_container_jbp"
+                    style="@style/jukeboxContentContainerLS"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/playlist_header_plp"
+                        style="@style/jukeboxContainerHeader"
+                        android:text="@string/playlist_header" />
+
+                    <View
+                        android:id="@+id/playlist_divider_line"
+                        style="@style/jukeboxHorizontalLine" />
+
+                    <TextView
+                        android:id="@+id/last_three_header_plp"
+                        style="@style/jukeboxPlaylistHeader"
+                        android:text="@string/last_three_songs_header" />
+
+                    <TextView
+                        android:id="@+id/third_to_last_song_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_3_third_to_last_song_played" />
+
+                    <TextView
+                        android:id="@+id/second_to_last_song_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_2_second_to_last_song_played" />
+
+                    <TextView
+                        android:id="@+id/last_song_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/_1_last_song_played" />
+
+                    <View
+                        android:id="@+id/last_three_divider_line"
+                        style="@style/jukeboxHorizontalLine" />
+
+                    <TextView
+                        android:id="@+id/current_header_plp"
+                        style="@style/jukeboxPlaylistHeader"
+                        android:text="@string/now_playing_header" />
+
+                    <TextView
+                        android:id="@+id/current_song_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/current_song_being_played" />
+
+                    <View
+                        android:id="@+id/current_divider_line"
+                        style="@style/jukeboxHorizontalLine" />
+
+                    <TextView
+                        android:id="@+id/next_ten_header_plp"
+                        style="@style/jukeboxPlaylistHeader"
+                        android:text="@string/next_ten_songs" />
+
+                    <TextView
+                        android:id="@+id/next_song_1_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_1_next_song" />
+
+                    <TextView
+                        android:id="@+id/next_song_2_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_2_next_song" />
+
+                    <TextView
+                        android:id="@+id/next_song_3_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_3_next_song" />
+
+                    <TextView
+                        android:id="@+id/next_song_4_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_4_next_song" />
+
+                    <TextView
+                        android:id="@+id/next_song_5_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_5_next_song" />
+
+                    <TextView
+                        android:id="@+id/next_song_6_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_6_next_song" />
+
+                    <TextView
+                        android:id="@+id/next_song_7_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_7_next_song" />
+
+                    <TextView
+                        android:id="@+id/next_song_8_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_8_next_song" />
+
+                    <TextView
+                        android:id="@+id/next_song_9_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:text="@string/_9_next_song" />
+
+                    <TextView
+                        android:id="@+id/next_song_10_plp"
+                        style="@style/jukeboxPlaylistContent"
+                        android:layout_marginLeft="14dp"
+                        android:text="@string/_10_next_song" />
+
+                    <Button
+                        android:id="@+id/playlist_about_button"
+                        style="@style/black_question_mark"
+                        android:text="@string/question_mark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/controls_container"
+                    style="@style/jukeboxContentContainerLS"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <SeekBar
+                        android:id="@+id/seek_jbp"
+                        style="@style/seekbarStyle" />
+
+                    <LinearLayout
+                        android:id="@+id/jukebox_button_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp">
+
+                        <ImageButton
+                            android:id="@+id/previous_button_jbp"
+                            style="@style/jukeboxControlButtons"
+                            android:layout_marginLeft="16dp"
+                            android:contentDescription="@string/previous_button"
+                            android:src="@drawable/previous" />
+
+                        <ImageButton
+                            android:id="@+id/stop_button_jbp"
+                            style="@style/jukeboxControlButtons"
+                            android:contentDescription="@string/stop_button"
+                            android:src="@drawable/stop_button" />
+
+                        <ImageButton
+                            android:id="@+id/play_pause_button_jbp"
+                            style="@style/jukeboxControlButtons"
+                            android:contentDescription="@string/play_pause_button"
+                            android:src="@drawable/play_button" />
+
+                        <ImageButton
+                            android:id="@+id/next_button_jbp"
+                            style="@style/jukeboxControlButtons"
+                            android:layout_marginRight="16dp"
+                            android:contentDescription="@string/next_button"
+                            android:src="@drawable/next" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/now_playing_tab_jbp"
+                            style="@style/jukeboxOptions"
+                            android:background="@drawable/gray_rounded_bottom_left_corners"
+                            android:text="@string/now_playing"
+                            android:textColor="@color/offBlackForText" />
+
+                        <TextView
+                            android:id="@+id/playlist_tab_jbp"
+                            style="@style/jukeboxOptions"
+                            android:background="@drawable/black_nonrounded_corners"
+                            android:text="@string/current_playlist" />
+
+                        <TextView
+                            android:id="@+id/add_music_tab_jbp"
+                            style="@style/jukeboxOptions"
+                            android:background="@drawable/black_rounded_bottom_right_corners"
+                            android:text="@string/add_music" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

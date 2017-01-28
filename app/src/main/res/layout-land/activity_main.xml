@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_alpha"
+    tools:context="com.thewickerbreaker.auriculartreats.MainActivity">
+
+    <ScrollView
+        android:id="@+id/main_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/main_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/logo_image"
+                style="@style/landscapeLogoStyle"
+                android:alpha=".8"
+                android:background="@drawable/teal_with_dark_border"
+                android:contentDescription="@string/main_logo"
+                android:src="@drawable/main_logo_landscape" />
+
+            <LinearLayout
+                android:id="@+id/main_option_button_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/jukebox_select_button"
+                        style="@style/openingOptionButtons"
+                        android:text="@string/jukebox" />
+
+                    <TextView
+                        android:id="@+id/about_jukebox"
+                        style="@style/aboutOptionButton"
+                        android:text="@string/question_mark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/radio_select_button"
+                        style="@style/openingOptionButtons"
+                        android:text="@string/radio" />
+
+                    <TextView
+                        android:id="@+id/about_radio"
+                        style="@style/aboutOptionButton"
+                        android:text="@string/question_mark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/podcast_select_button"
+                        style="@style/openingOptionButtons"
+                        android:text="@string/podcast" />
+
+                    <TextView
+                        android:id="@+id/about_podcast"
+                        style="@style/aboutOptionButton"
+                        android:text="@string/question_mark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/main_login_or_signup_contianer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="32dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/log_in_button"
+                        style="@style/loginButtonStyle"
+                        android:alpha=".8"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/log_in" />
+
+                    <TextView
+                        android:id="@+id/sign_up_clickable_text"
+                        style="@style/signUpText"
+                        android:text="@string/or_sign_up_now" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
